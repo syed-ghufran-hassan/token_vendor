@@ -38,13 +38,13 @@ const TokenVendor: NextPage = () => {
     args: [toAddress, multiplyTo1e18(tokensToSend)],
   });
 
-  // // Vendor Balances
-  // const { data: vendorContractData } = useDeployedContractInfo("Vendor");
-  // const { data: vendorTokenBalance } = useScaffoldContractRead({
-  //   contractName: "YourToken",
-  //   functionName: "balanceOf",
-  //   args: [vendorContractData?.address],
-  // });
+   // Vendor Balances
+   const { data: vendorContractData } = useDeployedContractInfo("Vendor");
+  const { data: vendorTokenBalance } = useScaffoldContractRead({
+    contractName: "YourToken",
+    functionName: "balanceOf",
+    args: [vendorContractData?.address],
+  });
   // const { balance: vendorEthBalance } = useAccountBalance(vendorContractData?.address);
 
   // // tokenPerEth
@@ -53,12 +53,12 @@ const TokenVendor: NextPage = () => {
   //   functionName: "tokensPerEth",
   // });
 
-  // // Buy Tokens
-  // const { writeAsync: buyTokens } = useScaffoldContractWrite({
-  //   contractName: "Vendor",
-  //   functionName: "buyTokens",
-  //   value: getTokenPrice(tokensToBuy, tokensPerEth),
-  // });
+  // Buy Tokens
+   const { writeAsync: buyTokens } = useScaffoldContractWrite({
+     contractName: "Vendor",
+     functionName: "buyTokens",
+     value: getTokenPrice(tokensToBuy, tokensPerEth),
+   });
 
   // // Approve Tokens
   // const { writeAsync: approveTokens } = useScaffoldContractWrite({
